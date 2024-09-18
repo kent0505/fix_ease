@@ -7,7 +7,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/config/app_colors.dart';
 import '../../core/config/router.dart';
 import '../../core/db/prefs.dart';
-import '../../core/utils.dart';
 import '../../core/widgets/custom_scaffold.dart';
 import '../broken/bloc/broken_bloc.dart';
 
@@ -46,7 +45,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    // load();
+    load();
   }
 
   @override
@@ -54,26 +53,24 @@ class _SplashPageState extends State<SplashPage> {
     return CustomScaffold(
       body: Stack(
         children: [
-          if (getWidth(context) < 500)
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: SvgPicture.asset(
-                'assets/line1.svg',
-                fit: BoxFit.cover,
-              ),
+          Positioned(
+            top: 40,
+            left: 0,
+            right: 0,
+            child: SvgPicture.asset(
+              'assets/line1.svg',
+              fit: BoxFit.fill,
             ),
-          if (getWidth(context) < 500)
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: SvgPicture.asset(
-                'assets/line2.svg',
-                fit: BoxFit.cover,
-              ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: SvgPicture.asset(
+              'assets/line2.svg',
+              fit: BoxFit.fill,
             ),
+          ),
           Positioned(
             top: 240,
             left: 0,
