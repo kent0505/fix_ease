@@ -23,7 +23,7 @@ class _AddBrokenPageState extends State<AddBrokenPage> {
   final controller3 = TextEditingController();
   final controller4 = TextEditingController();
 
-  bool active = true;
+  bool active = false;
 
   void checkActive() {
     setState(() {
@@ -131,7 +131,7 @@ class _AddBrokenPageState extends State<AddBrokenPage> {
                       active: controller4.text == 'A couple of days',
                       onPressed: onPeriod,
                     ),
-                    const SizedBox(height: 120),
+                    SizedBox(height: 120 + getBottom(context)),
                   ],
                 ),
                 Align(

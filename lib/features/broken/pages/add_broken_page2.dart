@@ -22,7 +22,7 @@ class _AddBrokenPage2State extends State<AddBrokenPage2> {
   List<TextEditingController> controllers1 = [TextEditingController()];
   List<TextEditingController> controllers2 = [TextEditingController()];
 
-  bool active = true;
+  bool active = false;
 
   void cheackActive() {
     setState(() {
@@ -128,7 +128,7 @@ class _AddBrokenPage2State extends State<AddBrokenPage2> {
                       title: '+ Add New',
                       onPressed: onAdd,
                     ),
-                    const SizedBox(height: 120),
+                    SizedBox(height: 120 + getBottom(context)),
                   ],
                 ),
                 Align(

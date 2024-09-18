@@ -98,7 +98,7 @@ class _AddBrokenPage3State extends State<AddBrokenPage3> {
                       onImage: onPickImage,
                       onChanged: cheackActive,
                     ),
-                    const SizedBox(height: 120),
+                    SizedBox(height: 120 + getBottom(context)),
                   ],
                 ),
                 Align(
