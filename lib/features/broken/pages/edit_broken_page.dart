@@ -161,6 +161,7 @@ class _EditBrokenPageState extends State<EditBrokenPage> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 150),
                   ],
                 ),
               ),

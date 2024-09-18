@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                               return BrokenCard(broken: state.brokens[index]);
                             },
                           ),
-                          const SizedBox(height: 120),
+                          SizedBox(height: 120 + getBottom(context)),
                         ],
                       ),
                     );
