@@ -84,6 +84,7 @@ void logger(Object message) {
 void precacheImages(BuildContext context) {
   try {
     List<String> imageAssets = [
+      'assets/icon.png',
       'assets/bg.png',
       'assets/gear.png',
       'assets/repaired.png',
