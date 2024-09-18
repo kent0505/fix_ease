@@ -11,7 +11,6 @@ import 'features/home/bloc/home_bloc.dart';
 
 void main() async {
   await initHive();
-  // WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

@@ -1,6 +1,5 @@
 import 'package:fix_ease/core/config/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/config/router.dart';
 import '../../core/utils.dart';
@@ -23,27 +22,32 @@ class _OnboardPageState extends State<OnboardPage> {
         child: Column(
           children: [
             const Spacer(),
-            SvgPicture.asset('assets/border.svg'),
-            // Container(
-            //   height: 260,
-            //   decoration: BoxDecoration(
-            //     color: Colors.transparent, // Background color of the container
-            //     borderRadius: BorderRadius.circular(10), // Rounded corners
-            //     border: Border.all(
-            //       color: Colors.grey, // Border color
-            //       width: 2.0, // Border width
-            //     ),
-            //     boxShadow: [
-            //       BoxShadow(
-            //         color: Colors.black
-            //             .withOpacity(0.3), // Shadow color with opacity
-            //         spreadRadius: 1, // How far the shadow spreads
-            //         blurRadius: 5, // The blur radius of the shadow
-            //         offset: const Offset(2, 2), // Position of the shadow
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  width: 2,
+                  color: AppColors.main,
+                ),
+              ),
+              child: Container(
+                height: 228,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: AppColors.textfield,
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: RotationTransition(
+                  turns: const AlwaysStoppedAnimation(6 / 366),
+                  child: Image.asset(
+                    'assets/onboard.png',
+                    width: double.infinity,
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(height: 50),
             Stack(
               children: <Widget>[

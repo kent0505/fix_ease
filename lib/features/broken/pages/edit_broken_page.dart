@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -52,6 +54,12 @@ class _EditBrokenPageState extends State<EditBrokenPage> {
                             color: AppColors.textfield,
                             borderRadius: BorderRadius.circular(24),
                           ),
+                          child: widget.broken.image.isNotEmpty
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(24),
+                                  child: Image.file(File(widget.broken.image)),
+                                )
+                              : null,
                         ),
                       ],
                     ),
