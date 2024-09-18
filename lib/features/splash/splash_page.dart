@@ -46,7 +46,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    load();
+    // load();
   }
 
   @override
@@ -56,17 +56,23 @@ class _SplashPageState extends State<SplashPage> {
         children: [
           if (getWidth(context) < 500)
             Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: SvgPicture.asset('assets/line1.svg'),
-            ),
-          if (getWidth(context) < 500)
-            Positioned(
               top: 0,
               left: 0,
               right: 0,
-              child: SvgPicture.asset('assets/line2.svg'),
+              child: SvgPicture.asset(
+                'assets/line1.svg',
+                fit: BoxFit.cover,
+              ),
+            ),
+          if (getWidth(context) < 500)
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: SvgPicture.asset(
+                'assets/line2.svg',
+                fit: BoxFit.cover,
+              ),
             ),
           Positioned(
             top: 240,
@@ -109,9 +115,9 @@ class _SplashPageState extends State<SplashPage> {
                         ),
                       ),
                       Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Image.asset('assets/gear.png'),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset('assets/icon.png'),
                         ),
                       ),
                     ],
