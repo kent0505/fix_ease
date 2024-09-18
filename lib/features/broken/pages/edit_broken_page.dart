@@ -36,7 +36,11 @@ class _EditBrokenPageState extends State<EditBrokenPage> {
         children: [
           Column(
             children: [
-              const CustomAppbar(title: 'Broken Item'),
+              CustomAppbar(
+                title: 'Broken Item',
+                broken: widget.broken,
+                settings: true,
+              ),
               const SizedBox(height: 12),
               Expanded(
                 child: ListView(
@@ -57,7 +61,11 @@ class _EditBrokenPageState extends State<EditBrokenPage> {
                           child: widget.broken.image.isNotEmpty
                               ? ClipRRect(
                                   borderRadius: BorderRadius.circular(24),
-                                  child: Image.file(File(widget.broken.image)),
+                                  child: Image.file(
+                                    File(widget.broken.image),
+                                    fit: BoxFit.cover,
+                                    width: double.infinity,
+                                  ),
                                 )
                               : null,
                         ),
