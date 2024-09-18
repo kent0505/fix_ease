@@ -54,60 +54,70 @@ class _SplashPageState extends State<SplashPage> {
     return CustomScaffold(
       body: Stack(
         children: [
+          if (getWidth(context) < 500)
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: SvgPicture.asset('assets/line1.svg'),
+            ),
+          if (getWidth(context) < 500)
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: SvgPicture.asset('assets/line2.svg'),
+            ),
           Positioned(
-            top: 40,
+            top: 240,
             left: 0,
             right: 0,
-            child: SvgPicture.asset('assets/line1.svg'),
-          ),
-          Positioned(
-            bottom: getBottom(context),
-            left: 0,
-            right: 0,
-            child: SvgPicture.asset('assets/line2.svg'),
-          ),
-          Center(
-            child: Container(
-              height: 148,
-              width: 148,
-              padding: const EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                color: const Color(0xff0F001D),
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  width: 2,
-                  color: AppColors.white,
-                ),
-              ),
-              child: Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: ExactAssetImage('assets/bg.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 148,
+                  width: 148,
+                  padding: const EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: const Color(0xff0F001D),
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                      width: 2,
+                      color: AppColors.white,
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.bg.withOpacity(0.6),
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: ExactAssetImage('assets/bg.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: AppColors.bg.withOpacity(0.6),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Image.asset('assets/gear.png'),
+                        ),
+                      ),
+                    ],
                   ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Image.asset('assets/gear.png'),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Positioned(
