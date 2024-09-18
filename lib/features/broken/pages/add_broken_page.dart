@@ -25,7 +25,7 @@ class _AddBrokenPageState extends State<AddBrokenPage> {
 
   bool active = true;
 
-  void cheackActive() {
+  void checkActive() {
     setState(() {
       active = getButtonActive([
         controller1,
@@ -38,7 +38,7 @@ class _AddBrokenPageState extends State<AddBrokenPage> {
 
   void onPeriod(String value) {
     controller4.text = value;
-    cheackActive();
+    checkActive();
   }
 
   void onNext() {
@@ -53,6 +53,7 @@ class _AddBrokenPageState extends State<AddBrokenPage> {
         expenses: [],
         image: '',
         description: '',
+        done: false,
       ),
     );
   }
@@ -83,19 +84,19 @@ class _AddBrokenPageState extends State<AddBrokenPage> {
                     TxtField(
                       controller: controller1,
                       hintText: 'The name of the item',
-                      onChanged: cheackActive,
+                      onChanged: checkActive,
                     ),
                     const SizedBox(height: 10),
                     TxtField(
                       controller: controller2,
                       hintText: 'What category is the item',
-                      onChanged: cheackActive,
+                      onChanged: checkActive,
                     ),
                     const SizedBox(height: 10),
                     TxtField(
                       controller: controller3,
                       hintText: 'What the reason for the breakdown',
-                      onChanged: cheackActive,
+                      onChanged: checkActive,
                     ),
                     const SizedBox(height: 20),
                     const Text(

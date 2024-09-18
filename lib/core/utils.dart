@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
+import 'db/db.dart';
+
 double navBarHeight = 60;
 
 int getCurrentTimestamp() {
@@ -84,6 +86,7 @@ void precacheImages(BuildContext context) {
     List<String> imageAssets = [
       'assets/bg.png',
       'assets/gear.png',
+      'assets/repaired.png',
     ];
     for (String assets in imageAssets) {
       precacheImage(AssetImage(assets), context);
@@ -110,4 +113,14 @@ String getTotalBrokenExpense(Broken broken) {
     total += expense.price;
   }
   return '\$$total';
+}
+
+int getTotalRepaired() {
+  int total = 0;
+  for (Broken broken in DB.brokensList) {
+    if (broken.done) {
+      total++;
+    }
+  }
+  return total;
 }

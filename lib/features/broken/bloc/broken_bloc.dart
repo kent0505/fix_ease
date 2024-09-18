@@ -19,7 +19,6 @@ class BrokenBloc extends Bloc<BrokenEvent, BrokenState> {
     });
 
     on<AddBrokenEvent>((event, emit) async {
-      // DB.brokensList.insert(0, event.test);
       DB.brokensList.add(event.broken);
       await updateModels();
 
@@ -27,10 +26,8 @@ class BrokenBloc extends Bloc<BrokenEvent, BrokenState> {
     });
 
     on<EditBrokenEvent>((event, emit) async {
-      for (Broken test in DB.brokensList) {
-        if (test.id == event.broken.id) {
-          test.title = event.broken.title;
-        }
+      for (Broken broken in DB.brokensList) {
+        if (broken.id == event.id) broken.done = event.done;
       }
       await updateModels();
 

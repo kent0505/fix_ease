@@ -67,6 +67,7 @@ class _AddBrokenPage2State extends State<AddBrokenPage2> {
         ],
         image: '',
         description: '',
+        done: false,
       ),
     );
   }

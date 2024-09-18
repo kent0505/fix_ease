@@ -10,8 +10,12 @@ class AddBrokenEvent extends BrokenEvent {
 }
 
 class EditBrokenEvent extends BrokenEvent {
-  final Broken broken;
-  EditBrokenEvent({required this.broken});
+  final int id;
+  final bool done;
+  EditBrokenEvent({
+    required this.id,
+    required this.done,
+  });
 }
 
 class DeleteBrokenEvent extends BrokenEvent {

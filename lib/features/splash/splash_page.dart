@@ -22,8 +22,8 @@ class _SplashPageState extends State<SplashPage> {
       Future.delayed(const Duration(seconds: 2), () {
         if (mounted) {
           if (onboard) {
-            // context.go(Routes.onboard);
-            context.go(Routes.home);
+            context.go(Routes.onboard);
+            // context.go(Routes.home);
           } else {
             context.go(Routes.home);
           }

@@ -54,6 +54,7 @@ class _AddBrokenPage3State extends State<AddBrokenPage3> {
               expenses: widget.broken.expenses,
               image: image.path,
               description: controller.text,
+              done: false,
             ),
           ),
         );

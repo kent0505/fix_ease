@@ -8,7 +8,6 @@ class NoBroken extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 146,
       margin: const EdgeInsets.only(
         top: 12,
         left: 20,
@@ -46,7 +45,10 @@ class NoBroken extends StatelessWidget {
               ],
             ),
           ),
-          Image.asset('assets/gear.png'),
+          Image.asset(
+            'assets/gear.png',
+            height: 106,
+          ),
         ],
       ),
     );

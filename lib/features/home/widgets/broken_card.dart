@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/config/app_colors.dart';
+import '../../../core/config/router.dart';
 import '../../../core/models/broken.dart';
 import '../../../core/utils.dart';
 
@@ -115,7 +116,9 @@ class BrokenCard extends StatelessWidget {
               ),
               const Spacer(),
               CupertinoButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(Routes.edit, extra: broken);
+                },
                 padding: EdgeInsets.zero,
                 minSize: 36,
                 child: Container(

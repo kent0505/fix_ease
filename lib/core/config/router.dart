@@ -4,21 +4,25 @@ export 'package:go_router/go_router.dart';
 import '../../features/broken/pages/add_broken_page.dart';
 import '../../features/broken/pages/add_broken_page2.dart';
 import '../../features/broken/pages/add_broken_page3.dart';
+import '../../features/broken/pages/edit_broken_page.dart';
 import '../../features/home/pages/broken_items_page.dart';
 import '../../features/home/pages/home_page.dart';
 import '../../features/home/pages/settings_page.dart';
 import '../../features/splash/onboard_page.dart';
+import '../../features/splash/profile_page.dart';
 import '../../features/splash/splash_page.dart';
 import '../models/broken.dart';
 
 class Routes {
   static String onboard = '/onboard';
+  static String profile = '/profile';
   static String home = '/home';
   static String settings = '/settings';
   static String brokens = '/brokens';
   static String add = '/add';
   static String add2 = '/add2';
   static String add3 = '/add3';
+  static String edit = '/edit';
 }
 
 final routerConfig = GoRouter(
@@ -31,6 +35,10 @@ final routerConfig = GoRouter(
     GoRoute(
       path: Routes.onboard,
       builder: (context, state) => const OnboardPage(),
+    ),
+    GoRoute(
+      path: Routes.profile,
+      builder: (context, state) => const ProfilePage(),
     ),
     GoRoute(
       path: Routes.home,
@@ -57,6 +65,12 @@ final routerConfig = GoRouter(
     GoRoute(
       path: Routes.add3,
       builder: (context, state) => AddBrokenPage3(
+        broken: state.extra as Broken,
+      ),
+    ),
+    GoRoute(
+      path: Routes.edit,
+      builder: (context, state) => EditBrokenPage(
         broken: state.extra as Broken,
       ),
     ),

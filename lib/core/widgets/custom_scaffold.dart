@@ -18,6 +18,7 @@ class CustomScaffold extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
+                Container(color: AppColors.textfield),
                 Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(

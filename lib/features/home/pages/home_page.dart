@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         children: [
                           const SizedBox(height: 12),
-                          const TotalRepairedCard(repaired: 0),
+                          TotalRepairedCard(repaired: getTotalRepaired()),
                           const SizedBox(height: 24),
                           const ViewAllCard(),
                           const SizedBox(height: 14),

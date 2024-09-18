@@ -18,6 +18,8 @@ class Broken {
   String image;
   @HiveField(7)
   String description;
+  @HiveField(8)
+  bool done;
 
   Broken({
     required this.id,
@@ -28,6 +30,7 @@ class Broken {
     required this.expenses,
     required this.image,
     required this.description,
+    required this.done,
   });
 }
 
@@ -59,6 +62,7 @@ class BrokenAdapter extends TypeAdapter<Broken> {
       expenses: reader.read(),
       image: reader.read(),
       description: reader.read(),
+      done: reader.read(),
     );
   }
 
@@ -72,6 +76,7 @@ class BrokenAdapter extends TypeAdapter<Broken> {
     writer.write(obj.expenses);
     writer.write(obj.image);
     writer.write(obj.description);
+    writer.write(obj.done);
   }
 }
 
